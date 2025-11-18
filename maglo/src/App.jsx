@@ -48,17 +48,21 @@ const App = () => {
         <div className="auth-container">
           <div className='auth-title d-flex justify-content-center align-items-start'>
             <img src={Google} />
-            {!isSignIn ?
-              <p>Sign in with google</p>
-              : <p>Sign up with google</p>
-            }
+              {isSignIn ? "Sign up with google" : "Sign in with google"}
           </div>
 
-          <div className='d-flex justify-content-center align-items-start'>
-            {isSignIn ?
-              <p className='auth-subtitle'>Don’t have an account? <span className='auth-bold' onClick={() => setIsSignIn(!isSignIn)}>Sign up</span></p>
-              : <p className='auth-subtitle'>Already have an account? <span className='auth-bold' onClick={() => setIsSignIn(!isSignIn)} >Sign in</span></p>
-            }
+          <div className='d-flex justify-content-center align-items-start mt-2'>
+            <p className="auth-subtitle">
+                {isSignIn 
+                  ? "Don’t have an account? " 
+                  : "Already have an account? "}
+                <span 
+                  className="auth-bold" 
+                  onClick={() => setIsSignIn(!isSignIn)}
+                >
+                  {isSignIn ? "Sign up" : "Sign in"}
+                </span>
+            </p>
           </div>
         </div>
       </div>
