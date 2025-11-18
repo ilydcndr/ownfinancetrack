@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div className='row'>
       <div className='col-6 main-left'>
-        <img src={Logo} alt='Logo' />,
+        <img src={Logo} alt='Logo' />
 
         {isSignIn ?
           <LoginForm onSignIn={handleLogin} />
@@ -47,7 +47,7 @@ const App = () => {
 
         <div className="auth-container">
           <div className='auth-title d-flex justify-content-center align-items-start'>
-            <img src={Google} />
+            <img src={Google} alt="Sign in with Google"/>
               {isSignIn ? "Sign up with google" : "Sign in with google"}
           </div>
 

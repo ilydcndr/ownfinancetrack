@@ -1,4 +1,6 @@
-@use './utils/colors' as *;
+@use './utils/variables' as *;
+
+//COMMON CSS
 
 html,
 body,
@@ -8,6 +10,24 @@ p {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid $primary-black;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  box-shadow: $shadow;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .form-header {
