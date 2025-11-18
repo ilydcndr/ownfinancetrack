@@ -1,16 +1,16 @@
 import './App.scss'
 import Logo from './assets/logos/maglo-logo.svg';
-import Stick from './assets/logos/stick.svg';
 import Google from './assets/logos/google.png';
 import MainImg from './assets/images/main-img.svg';
 import SignupForm from './components/SignupForm/SignupForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Dashboard from './components/Dashboard/Dashboard';
 import { useState, useEffect } from "react";
+import { useAuth } from "./context/AuthContext";
 
 const App = () => {
   const [isSignIn, setIsSignIn] = useState(true);
-  const [user, setUser] = useState(null);
+  const { user, setUser } = useAuth();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -19,11 +19,11 @@ const App = () => {
     }
   }, []);
 
-  const handleLogin = (userData) => {
-    setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
-    console.log(JSON.stringify(userData), "localst")
-    console.log(userData, "userdata")
+  const handleLogin = (userData, token) => {
+    console.log(userData,"dataa")
+    setUser({ ...userData, token });
+    localStorage.setItem("user", JSON.stringify({ ...userData, token }));
+    console.log(token,"tokennn")
   };
 
   const handleSignUp = (newUserData) => {
@@ -32,7 +32,7 @@ const App = () => {
   };
 
   if (user) {
-    return <Dashboard user={user} />;
+    return  <Dashboard user={user} /> 
   }
 
   return (

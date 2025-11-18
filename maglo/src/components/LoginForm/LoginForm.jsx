@@ -14,20 +14,57 @@ const LoginForm = ({ onSignIn }) => {
 
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    Toastify({
-      text: "Giriş Başarılı ✔",
-      duration: 3000,
-      gravity: "top",
-      position: "right",
-      backgroundColor: "white",
-      stopOnFocus: true,
-      close: true,
-      style: {
-        border: '1px solid green',
-        color: 'green',
-      },
-    }).showToast();
-    onSignIn(data);
+    try {
+      const loginRes = await fetch("http://localhost:5737/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      console.log(loginRes.ok,"loggg")
+
+      if (!loginRes.ok) { throw new Error("Giriş başarısız!"); }
+
+      const loginData = await loginRes.json();
+      const token = loginData.token;
+
+      Toastify({
+        text: "Giriş Başarılı ✔",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "white",
+        stopOnFocus: true,
+        close: true,
+        style: {
+          border: "1px solid green",
+          color: "green",
+        },
+      }).showToast();
+
+      onSignIn({ ...data, token });
+
+    } catch (err) {
+      console.error(err);
+      Toastify({
+        text: `Hata: ${err.message}`,
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "white",
+        stopOnFocus: true,
+        close: true,
+        style: {
+          border: "1px solid red",
+          color: "red",
+        },
+      }).showToast();
+    }
   };
 
   return (
@@ -38,7 +75,7 @@ const LoginForm = ({ onSignIn }) => {
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className='form-container d-flex flex-column' noValidate>
         <div className='form-group d-flex flex-column'>
-          <label className='' htmlFor="email">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             id='email'
             type='email'
