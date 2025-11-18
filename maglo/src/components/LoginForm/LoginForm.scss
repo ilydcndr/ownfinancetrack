@@ -1,0 +1,10 @@
+@use '../../utils/colors' as *;
+
+.form-header.sign-in {
+    @media (min-width: 1200px) {
+      margin-top: 50px;
+    }
+    @media (min-width: 1400px) {
+      margin-top: 157px;
+    }
+}

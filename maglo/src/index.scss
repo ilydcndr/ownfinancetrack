@@ -1,0 +1,82 @@
+@use './utils/colors' as *;
+
+html,
+body,
+#root,
+p {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.form-header {
+  @media (min-width: 1200px) {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 1400px) {
+    margin-top: 150px;
+  }
+
+  .title {
+    color: $primary-black;
+    font-size: 20px;
+    margin-bottom: 0;
+
+    @media (min-width: 1200px) {
+      font-size: 30px;
+    }
+
+    @media (min-width: 1400px) {
+      font-size: 30px;
+    }
+  }
+
+  .subtitle {
+    color: $primary-gray;
+  }
+}
+
+.form-button {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: $btn-color;
+  color: $primary-black;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form-button:hover {
+  border: 1px solid yellow;
+  box-shadow: $shadow;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.form-input.error {
+  border-color: red;
+}
+
+.form-input {
+  padding: 10px;
+  border: 1px solid $secondary-gray;
+  border-radius: 10px;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary-gray;
+  }
+}

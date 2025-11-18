@@ -1,0 +1,82 @@
+import { useForm } from "react-hook-form";
+import "./SignupForm.scss";
+
+const LoginForm = ({onSignUp}) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    onSignUp(data);
+  };
+
+  return (
+    <>
+      <div className='form-header sign-up'>
+          <p className='title fw-semibold'>Create new account</p>
+          <p className='subtitle'>Welcome back! Please enter your details</p>
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)} className='form-container d-flex flex-column' noValidate>
+        <div className='form-group d-flex flex-column'>
+        <label htmlFor="fullname">Full Name</label>
+        <input
+            id='fullname'
+            type='text'
+            placeholder='John Doe'
+            {...register("fullname", {
+            required: "Full name zorunludur",
+            minLength: {
+                value: 2,
+                message: "En az 2 karakter olmalı"
+            },
+            maxLength: {
+                value: 50,
+                message: "En fazla 50 karakter olabilir"
+            }
+            })}
+            className={`form-input ${errors.fullname ? "error" : ""}`}
+        />
+        {errors.fullname && <p className="error-message">{errors.fullname.message}</p>}
+        </div>
+
+        <div className='form-group d-flex flex-column'>
+          <label className='' htmlFor="email">Email</label>
+          <input
+            id='email'
+            type='email'
+            placeholder='example@gmail.com'
+            {...register("email", {
+              required: "Email zorunludur",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Geçerli bir email giriniz",
+              },
+            })}
+            className={`form-input ${errors.email ? "error" : ""}`}
+          />
+          {errors.email && <p className="error-message">{errors.email.message}</p>}
+        </div>
+
+        <div className="form-group d-flex flex-column">
+          <label htmlFor="email">Password</label>
+          <input
+            id='password'
+            type="password"
+            placeholder='*******'
+            {...register("password", { required: "Password zorunludur" })}
+            className={`form-input ${errors.password ? "error" : ""}`}
+          />
+          {errors.password && <p className="error-message">{errors.password.message}</p>}
+        </div>
+
+        <button type="submit" className="form-button border-0">
+          Create Account
+        </button>
+      </form>
+    </>
+  );
+};
+
+export default LoginForm;
