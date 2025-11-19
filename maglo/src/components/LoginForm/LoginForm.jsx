@@ -16,7 +16,7 @@ const LoginForm = ({ onSignIn }) => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     try {
-      const loginRes = await fetch(`${API}/users/login`, {
+      const loginRes = await fetch(`${API}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,11 +30,12 @@ const LoginForm = ({ onSignIn }) => {
       if (!loginRes.ok) { throw new Error("Giriş başarısız! Kayıt oldunuz mu"); }
 
       const loginData = await loginRes.json();
-      const loginInfo = loginData.data;
-      const token = loginInfo.accessToken;
-      const userId = loginInfo.user.id;
+      const token = loginData.token;
 
-      const userRes = await fetch(`${API}/users/${userId}`, {
+      console.log(loginData,"loginDataa")
+      console.log(token,"tokeen")
+
+      const userRes = await fetch(`${API}/profile`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -62,7 +63,7 @@ const LoginForm = ({ onSignIn }) => {
           color: "green",
         },
       }).showToast();
-      
+
       onSignIn({ ...userData, token });
     }
     catch (err) {

@@ -13,24 +13,22 @@ const SignupForm = ({ onSignUp }) => {
 
   const onSubmit = async (data) => {
     try {
-      const registerRes = await fetch(`${API}/users`, {
+      const registerRes = await fetch(`${API}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          fullname: data.fullname,
+          fullName: data.fullname,
           email: data.email,
           password: data.password,
         }),
       });
 
-
       if (!registerRes.ok) { throw new Error("Giriş başarısız!"); }
 
       const registerData = await registerRes.json();
-      const token = registerData.token;
-      console.log(token,"signup üretti")
+      const user = registerData.user;
 
       Toastify({
         text: "Kayıt olma Başarılı ✔",
@@ -46,7 +44,7 @@ const SignupForm = ({ onSignUp }) => {
         },
       }).showToast();
 
-      onSignUp({ ...data, token });
+      onSignUp({ user });
 
     } catch (err) {
       console.error(err);

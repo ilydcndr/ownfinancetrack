@@ -1,95 +1,97 @@
+// server.cjs
 const jsonServer = require("json-server");
+const { v4: uuidv4 } = require("uuid");
 const jwt = require("jsonwebtoken");
 
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
+const SECRET_KEY = "superSecretKey";
 
-server.use(middlewares);
 server.use(jsonServer.bodyParser);
+server.use(middlewares);
 
-const SECRET_KEY = "secret123";
-const TOKEN_EXPIRES = "2h";
-
-/* ----------------------- REGISTER ----------------------- */
-server.post("/users/register", (req, res) => {
-  const { email, password, fullName } = req.body;
-  const db = router.db;
-
-  const exists = db.get("users").find({ email }).value();
-  if (exists) {
-    return res.status(400).json({ message: "Bu email zaten kayıtlı!" });
-  }
-
-  const newUser = {
-    id: Date.now().toString(),
+// Default user template
+function getDefaultUser({ fullName, email, password }) {
+  return {
+    id: uuidv4(),
     email,
     password,
-    fullName: fullName || "",
+    fullName,
     role: "user",
     isActive: true,
-    financialSummary: {},
+    financialSummary: {
+      totalBalance: { amount: 0, currency: "TRY", change: { percentage: 0, trend: "up" } },
+      totalExpense: { amount: 0, currency: "TRY", change: { percentage: 0, trend: "up" } },
+      totalSavings: { amount: 0, currency: "TRY", change: { percentage: 0, trend: "up" } },
+      lastUpdated: new Date().toISOString()
+    },
     financialWorkingCapital: [],
     financialWallet: [],
     financialTransactionsRecent: [],
     financialTransfersScheduled: []
   };
+}
 
-  db.get("users").push(newUser).write();
+// -------------------- SIGNUP --------------------
+server.post("/signup", (req, res) => {
+  const db = router.db; // lowdb instance
+  const users = db.get("users");
+  const { fullName, email, password } = req.body;
 
-  return res.json({
-    message: "Kayıt başarılı!",
-    user: newUser
-  });
-});
-
-/* ----------------------- LOGIN ----------------------- */
-server.post("/users/login", (req, res) => {
-  const { email, password } = req.body;
-  const db = router.db;
-
-  const user = db.get("users").find({ email, password }).value();
-  if (!user) {
-    return res.status(401).json({ message: "E-mail veya şifre yanlış!" });
+  if (!fullName || !email || !password) {
+    return res.status(400).json({ message: "Tüm alanlar gerekli!" });
   }
 
-  const token = jwt.sign(
-    { id: user.id, email: user.email },
-    SECRET_KEY,
-    { expiresIn: TOKEN_EXPIRES }
-  );
+  const existingUser = users.find({ email }).value();
+  if (existingUser) {
+    return res.status(400).json({ message: "Bu email zaten kayıtlı!" });
+  }
 
-  // Login sonrası DB’ye token yaz
-  db.get("users")
-    .find({ id: user.id })
-    .assign({ accessToken: token })
-    .write();
+  const newUser = getDefaultUser({ fullName, email, password });
+  users.push(newUser).write();
 
- return res.json({
-    message: "Giriş başarılı!",
-    accessToken: token,
-    user: user
-  });
+  res.status(201).json({ message: "Kayıt başarılı", user: newUser });
 });
 
-/* ----------------------- GET USER BY ID ----------------------- */
-server.get("/users/:id", (req, res) => {
+// -------------------- LOGIN --------------------
+server.post("/login", (req, res) => {
   const db = router.db;
-  const userId = req.params.id;
+  const users = db.get("users");
+  const { email, password } = req.body;
 
-  // array içinden exact match
-  const user = db.get("users").find({ id: userId }).value();
+  const user = users.find({ email, password }).value();
+  if (!user) return res.status(401).json({ message: "Kullanıcı bulunamadı!" });
 
-  if (!user) return res.status(404).json({ message: "User not found" });
+  const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, { expiresIn: "7d" });
+  users.find({ id: user.id }).assign({ token }).write();
 
-  // nested tüm objeleri dahil ederek dön
-  res.json(user);
+  res.json({ message: "Giriş başarılı", token, user });
 });
 
+// -------------------- PROFILE --------------------
+server.get("/profile", (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) return res.status(401).json({ message: "Token yok!" });
 
-/* ----------------------- ROUTER ----------------------- */
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, SECRET_KEY);
+    const db = router.db;
+    const user = db.get("users").find({ id: decoded.id }).value();
+    if (!user) return res.status(404).json({ message: "Kullanıcı bulunamadı!" });
+
+    res.json(user);
+  } catch (err) {
+    return res.status(403).json({ message: "Token geçersiz!" });
+  }
+});
+
+// -------------------- ROUTER --------------------
 server.use(router);
 
+// -------------------- SERVER --------------------
 server.listen(5737, () => {
-  console.log("✓ JSON Server çalışıyor (nested objeler dahil)");
+  console.log("JSON Server running on port 5737");
 });
