@@ -7,9 +7,10 @@ import LoginForm from './components/LoginForm/LoginForm';
 import Dashboard from './components/Dashboard/Dashboard';
 import { useState, useEffect } from "react";
 import { useAuth } from "./context/AuthContext";
+const API = import.meta.env.VITE_API_URL;
 
 const App = () => {
-  const [isSignIn, setIsSignIn] = useState(true);
+  const [showSignIn, setShowSignIn] = useState(true);
   const { user, setUser } = useAuth();
 
   useEffect(() => {
@@ -20,15 +21,13 @@ const App = () => {
   }, []);
 
   const handleLogin = (userData, token) => {
-    console.log(userData,"dataa")
+    console.log(userData,"userdataaaa")
     setUser({ ...userData, token });
     localStorage.setItem("user", JSON.stringify({ ...userData, token }));
-    console.log(token,"tokennn")
   };
 
-  const handleSignUp = (newUserData) => {
-    setIsSignIn(true)
-    localStorage.setItem("user", JSON.stringify(newUserData));
+  const handleSignUp = () => {
+    setShowSignIn(true)
   };
 
   if (user) {
@@ -40,7 +39,7 @@ const App = () => {
       <div className='col-6 main-left'>
         <img src={Logo} alt='Logo' />
 
-        {isSignIn ?
+        {showSignIn ?
           <LoginForm onSignIn={handleLogin} />
           : <SignupForm onSignUp={handleSignUp} />
         }
@@ -48,19 +47,19 @@ const App = () => {
         <div className="auth-container">
           <div className='auth-title d-flex justify-content-center align-items-start'>
             <img src={Google} alt="Sign in with Google"/>
-              {isSignIn ? "Sign up with google" : "Sign in with google"}
+              {showSignIn ? "Sign up with google" : "Sign in with google"}
           </div>
 
           <div className='d-flex justify-content-center align-items-start mt-2'>
             <p className="auth-subtitle">
-                {isSignIn 
+                {showSignIn 
                   ? "Don’t have an account? " 
                   : "Already have an account? "}
                 <span 
                   className="auth-bold" 
-                  onClick={() => setIsSignIn(!isSignIn)}
+                  onClick={() => setShowSignIn(!showSignIn)}
                 >
-                  {isSignIn ? "Sign up" : "Sign in"}
+                  {showSignIn ? "Sign up" : "Sign in"}
                 </span>
             </p>
           </div>

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import "./SignupForm.scss";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
+const API = import.meta.env.VITE_API_URL;
 
 const SignupForm = ({ onSignUp }) => {
   const {
@@ -10,21 +11,59 @@ const SignupForm = ({ onSignUp }) => {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = (data) => {
-    Toastify({
-      text: "Kayıt Başarılı ✔",
-      duration: 3000,
-      gravity: "top",
-      position: "right",
-      backgroundColor: "white",
-      stopOnFocus: true,
-      close: true,
-      style: {
-        border: '1px solid green',
-        color: 'green',
-      },
-    }).showToast();
-    onSignUp(data);
+  const onSubmit = async (data) => {
+    try {
+      const registerRes = await fetch(`${API}/users`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullname: data.fullname,
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+
+      if (!registerRes.ok) { throw new Error("Giriş başarısız!"); }
+
+      const registerData = await registerRes.json();
+      const token = registerData.token;
+      console.log(token,"signup üretti")
+
+      Toastify({
+        text: "Kayıt olma Başarılı ✔",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "white",
+        stopOnFocus: true,
+        close: true,
+        style: {
+          border: "1px solid green",
+          color: "green",
+        },
+      }).showToast();
+
+      onSignUp({ ...data, token });
+
+    } catch (err) {
+      console.error(err);
+      Toastify({
+        text: `Hata: ${err.message}`,
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "white",
+        stopOnFocus: true,
+        close: true,
+        style: {
+          border: "1px solid red",
+          color: "red",
+        },
+      }).showToast();
+    }
   };
 
   return (

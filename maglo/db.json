@@ -1,0 +1,138 @@
+{
+  "users": [
+    {
+      "id": "60d0fe4f5311236168a109ca",
+      "email": "a@hot.com",
+      "password": "1234",
+      "fullName": "John Doe",
+      "role": "user",
+      "isActive": true,
+      "lastLoginAt": "2025-10-06T10:30:00.000Z",
+      "lastLoginIP": "192.168.1.1",
+      "createdAt": "2025-01-15T08:00:00.000Z",
+      "updatedAt": "2025-10-06T10:30:00.000Z",
+      "financialSummary": {
+        "totalBalance": {
+          "amount": 125750.5,
+          "currency": "TRY",
+          "change": {
+            "percentage": 12.5,
+            "trend": "up"
+          }
+        },
+        "totalExpense": {
+          "amount": 45320.75,
+          "currency": "TRY",
+          "change": {
+            "percentage": -8.3,
+            "trend": "down"
+          }
+        },
+        "totalSavings": {
+          "amount": 80429.75,
+          "currency": "TRY",
+          "change": {
+            "percentage": 15.2,
+            "trend": "up"
+          }
+        },
+        "lastUpdated": "2025-10-06T10:30:00.000Z"
+      },
+      "financialWorkingCapital": [
+        {
+          "id": 1,
+          "period": "last6Months",
+          "currency": "TRY",
+          "data": [
+            {
+              "month": "Ocak",
+              "income": 65000,
+              "expense": 42000,
+              "net": 23000
+            }
+          ],
+          "summary": {
+            "totalIncome": 390000,
+            "totalExpense": 252000,
+            "netBalance": 138000
+          }
+        }
+      ],
+      "financialWallet": [
+        {
+          "id": 1,
+          "cards": [
+            {
+              "id": "card_001",
+              "name": "Maglo Gold Card",
+              "type": "credit",
+              "cardNumber": "5495 7381 3759 2321",
+              "bank": "Maglo | Universal Bank",
+              "network": "Visa",
+              "expiryMonth": 12,
+              "expiryYear": 2027,
+              "color": "#000000",
+              "isDefault": true
+            }
+          ]
+        }
+      ],
+      "financialTransactionsRecent": [
+        {
+          "id": 1,
+          "transactions": [
+            {
+              "id": "trx_001",
+              "name": "iPhone 13 Pro MAX",
+              "business": "Apple Inc.",
+              "image": "https://i.ibb.co/Apple-Logo.png",
+              "type": "Mobile",
+              "amount": -420.84,
+              "currency": "TRY",
+              "date": "2025-10-06T10:30:00.000Z",
+              "status": "completed"
+            }
+          ],
+          "summary": {
+            "totalIncome": 45000,
+            "totalExpense": 765.04,
+            "count": 4
+          }
+        }
+      ],
+      "financialTransfersScheduled": [
+        {
+          "id": 1,
+          "transfers": [
+            {
+              "id": "sch_001",
+              "name": "Saleh Ahmed",
+              "image": "https://ui-avatars.com/api/?name=Saleh+Ahmed&background=random&size=100",
+              "date": "2022-04-28T11:00:00Z",
+              "amount": -435,
+              "currency": "$",
+              "status": "scheduled"
+            }
+          ],
+          "summary": {
+            "totalScheduledAmount": -2056,
+            "count": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "qS9Lp3c",
+      "email": "ilydcndr@gmail.com",
+      "password": "12345",
+      "fullName": "Ilayda Cundar",
+      "role": "user",
+      "isActive": true,
+      "financialSummary": {},
+      "financialWorkingCapital": [],
+      "financialWallet": [],
+      "financialTransactionsRecent": [],
+      "financialTransfersScheduled": []
+    }
+  ]
+}

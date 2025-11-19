@@ -1,13 +1,14 @@
 import ScheduledTransfers from "../ScheduledTransfers/ScheduledTransfers";
 import { useAuth } from "../../context/AuthContext";
+import Wallet from "../Wallet/Wallet";
 
-const Dashboard = () => {
-  const { user } = useAuth();
+const Dashboard = ({user}) => {
 
   return (
     <div>
-      <ScheduledTransfers/>
-      <h1>Welcome, {user.fullname || user.email}!</h1>
+      <div>{console.log(user,"dashboarda gelen")}</div>
+      <Wallet userInfo = {user}/>
+      <h1>Welcome, {user.fullName }!</h1>
       <p>Email: {user.email}</p>
     </div>
   );
