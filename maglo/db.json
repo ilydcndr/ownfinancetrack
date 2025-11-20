@@ -35,8 +35,7 @@
             "percentage": 15.2,
             "trend": "up"
           }
-        },
-        "lastUpdated": "2025-10-06T10:30:00.000Z"
+        }
       },
       "financialWorkingCapital": [
         {
@@ -83,13 +82,35 @@
           "transactions": [
             {
               "id": "trx_001",
-              "name": "iPhone 13 Pro MAX",
+              "name": "iPhone 13",
               "business": "Apple Inc.",
-              "image": "https://i.ibb.co/Apple-Logo.png",
-              "type": "Mobile",
-              "amount": -420.84,
+              "image": "https://dummyimage.com/40x40/b58db5/fff",
+              "type": "Apple Inc.",
+              "amount": 420.84,
               "currency": "TRY",
-              "date": "2025-10-06T10:30:00.000Z",
+              "date": "2025-10-16T10:30:00.000Z",
+              "status": "completed"
+            },
+            {
+              "id": "trx_002",
+              "name": "Samsung TV",
+              "business": "Samsung Inc.",
+              "image": "https://dummyimage.com/40x40/32a5cf/fff",
+              "type": "TV",
+              "amount": 120.84,
+              "currency": "TRY",
+              "date": "2025-10-16T10:30:00.000Z",
+              "status": "completed"
+            },
+            {
+              "id": "trx_003",
+              "name": "Chair",
+              "business": "Ikea Com.",
+              "image": "https://dummyimage.com/40x40/558db5/fff",
+              "type": "Mobile",
+              "amount": 100.84,
+              "currency": "TRY",
+              "date": "2025-10-06T13:30:00.000Z",
               "status": "completed"
             }
           ],
@@ -121,6 +142,33 @@
               "amount": -435,
               "currency": "$",
               "status": "scheduled"
+            },
+            {
+              "id": "sch_003",
+              "name": "Ali Ahmed",
+              "image": "https://ui-avatars.com/api/?name=Saleh+Ahmed&background=random&size=100",
+              "date": "2022-04-28T11:00:00Z",
+              "amount": -45,
+              "currency": "$",
+              "status": "scheduled"
+            },
+            {
+              "id": "sch_004",
+              "name": "Teddy Toe",
+              "image": "https://ui-avatars.com/api/?name=Saleh+Ahmed&background=random&size=100",
+              "date": "2022-04-28T11:00:00Z",
+              "amount": -675,
+              "currency": "$",
+              "status": "scheduled"
+            },
+            {
+              "id": "sch_005",
+              "name": "Joe Se",
+              "image": "https://ui-avatars.com/api/?name=Saleh+Ahmed&background=random&size=100",
+              "date": "2022-04-28T15:00:00Z",
+              "amount": -35,
+              "currency": "$",
+              "status": "scheduled"
             }
           ],
           "summary": {
@@ -130,7 +178,7 @@
         }
       ],
       "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNTY1NDQ1LCJleHAiOjE3NjM1NzI2NDV9.gcT4kUIrEi1vQUt1uo2o-DU6iNETJfnUuAZHoKQE1MA",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNTg1Njg1LCJleHAiOjE3NjQxOTA0ODV9.zVFZmnnCHeVDTlweeAefPoGwVv4LxQ_ratVTwGYcdU0"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNjI2MDM2LCJleHAiOjE3NjQyMzA4MzZ9.6ZlwDdS9cdty_NY5utK4plf7OG6PgQvgWmT3N-E0htU"
     },
     {
       "id": "qS9Lp3c",

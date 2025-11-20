@@ -1,17 +1,8 @@
+import { formatDate } from "../../utils/formatDate";
+import { formatUSD } from '../../utils/formatCurrency';
 const ScheduledItem = ({ transfer }) => {
 
     const date = new Date(transfer.date);
-
-    const options = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-    };
-
-    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date).replace(',', ' at');;
 
     return (
         <div>
@@ -20,10 +11,10 @@ const ScheduledItem = ({ transfer }) => {
                     <img className="rounded-circle" src={transfer.image} />
                     <div className="d-flex flex-column transfer-item-text">
                         <p className="fw-semibold transfer-title">{transfer.name}</p>
-                        <p className="fw-medium transfer-subtitle">{formattedDate}</p>
+                        <p className="fw-medium transfer-subtitle">{formatDate(date, 'en')}</p>
                     </div>
                 </div>
-                <div className="col-6 text-end d-flex justify-content-end align-items-center fw-semibold transfer-amount">{transfer.amount}</div>
+                <div className="col-6 text-end d-flex justify-content-end align-items-center fw-semibold transfer-amount">{formatUSD(transfer.amount)}</div>
             </div>
         </div>
     );

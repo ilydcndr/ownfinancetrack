@@ -12,8 +12,9 @@ const Dashboard = ({ user }) => {
         {/*<SideBar/>*/}
       </div>
       <div className="col-md-5 row">
-        <div className="col-2">
-          {/*<Total/>*/}
+        <div className="col-12 row">
+            {/*<Total/>*/}
+     
         </div>
         <div className="col-5">
           {/*<WorkingCapital/>*/}

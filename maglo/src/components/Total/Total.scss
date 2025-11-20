@@ -1,0 +1,29 @@
+@use '../../utils/variables' as *;
+
+.total {
+    &-box {
+        background-color: $gray-400;
+        padding: 20px;
+        border-radius: 10px;
+        gap: 5px;
+        cursor: pointer;
+
+        &.active {
+            background-color: $secondary-black;
+
+            .total-content {
+                color: white;
+            }
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+            margin: auto;
+        }
+    }
+
+    &-title {
+        color: $primary-gray;
+    }
+}
