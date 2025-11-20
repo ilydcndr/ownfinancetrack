@@ -105,6 +105,15 @@
           "id": 1,
           "transfers": [
             {
+              "id": "sch_002",
+              "name": "Sele naz",
+              "image": "https://ui-avatars.com/api/?name=Saleh+Ahmed&background=random&size=100",
+              "date": "2022-04-28T11:00:00Z",
+              "amount": -135,
+              "currency": "$",
+              "status": "scheduled"
+            },
+            {
               "id": "sch_001",
               "name": "Saleh Ahmed",
               "image": "https://ui-avatars.com/api/?name=Saleh+Ahmed&background=random&size=100",
@@ -121,7 +130,7 @@
         }
       ],
       "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNTY1NDQ1LCJleHAiOjE3NjM1NzI2NDV9.gcT4kUIrEi1vQUt1uo2o-DU6iNETJfnUuAZHoKQE1MA",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNTY5NjMwLCJleHAiOjE3NjQxNzQ0MzB9.W7cZo3YkqMNgN-oro_zSIHwx2FlwGylif7MAhdN5llA"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNTg1Njg1LCJleHAiOjE3NjQxOTA0ODV9.zVFZmnnCHeVDTlweeAefPoGwVv4LxQ_ratVTwGYcdU0"
     },
     {
       "id": "qS9Lp3c",
@@ -136,46 +145,6 @@
       "financialTransactionsRecent": [],
       "financialTransfersScheduled": [],
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InFTOUxwM2MiLCJlbWFpbCI6ImlseWRjbmRyQGdtYWlsLmNvbSIsImlhdCI6MTc2MzU2OTE5NCwiZXhwIjoxNzY0MTczOTk0fQ.i0AXlPKb9-LhiOPC3OOhuKG3Au6z949HG-MWqug3sto"
-    },
-    {
-      "id": "0dc150a6-e0b7-4152-ac49-d881350e77a3",
-      "email": "aaz@hot.com",
-      "password": "1",
-      "fullName": "aaz",
-      "role": "user",
-      "isActive": true,
-      "financialSummary": {
-        "totalBalance": {
-          "amount": 0,
-          "currency": "TRY",
-          "change": {
-            "percentage": 0,
-            "trend": "up"
-          }
-        },
-        "totalExpense": {
-          "amount": 0,
-          "currency": "TRY",
-          "change": {
-            "percentage": 0,
-            "trend": "up"
-          }
-        },
-        "totalSavings": {
-          "amount": 0,
-          "currency": "TRY",
-          "change": {
-            "percentage": 0,
-            "trend": "up"
-          }
-        },
-        "lastUpdated": "2025-11-19T16:37:07.255Z"
-      },
-      "financialWorkingCapital": [],
-      "financialWallet": [],
-      "financialTransactionsRecent": [],
-      "financialTransfersScheduled": [],
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBkYzE1MGE2LWUwYjctNDE1Mi1hYzQ5LWQ4ODEzNTBlNzdhMyIsImVtYWlsIjoiYWF6QGhvdC5jb20iLCJpYXQiOjE3NjM1NzAyODQsImV4cCI6MTc2NDE3NTA4NH0.6JmxbIIC_XeKF6TxYSbunsiD5_D0lQE_-uMuJEXPs30"
     }
   ]
 }

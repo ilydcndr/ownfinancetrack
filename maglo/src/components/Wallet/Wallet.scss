@@ -1,0 +1,32 @@
+@use '../../utils/variables' as *;
+
+.wallet {
+    &-title {
+        color: $primary-black;
+
+        @media (min-width: 1200px) {
+            font-size: 18px;
+        }
+    }
+
+    &-info {
+        margin-top: -20%;
+        padding: 3px;
+
+        div {
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        @media (min-width: 1200px) {
+            margin-top: -60%;
+            padding: 10px;
+        }
+    }
+
+    &-white-card {
+        img {
+            width: 90%;
+        }
+    }
+}

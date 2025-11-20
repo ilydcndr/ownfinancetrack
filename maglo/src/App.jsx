@@ -2,9 +2,7 @@ import './App.scss'
 import Logo from './assets/logos/maglo-logo.svg';
 import Google from './assets/logos/google.png';
 import MainImg from './assets/images/main-img.svg';
-import SignupForm from './components/SignupForm/SignupForm';
-import LoginForm from './components/LoginForm/LoginForm';
-import Dashboard from './components/Dashboard/Dashboard';
+import { Dashboard, LoginForm, SignupForm  } from './components/index';
 import { useState, useEffect } from "react";
 import { useAuth } from "./context/AuthContext";
 const API = import.meta.env.VITE_API_URL;
@@ -21,7 +19,6 @@ const App = () => {
   }, []);
 
   const handleLogin = (userData, token) => {
-    console.log(userData,"userdataaaa")
     setUser({ ...userData, token });
     localStorage.setItem("user", JSON.stringify({ ...userData, token }));
   };

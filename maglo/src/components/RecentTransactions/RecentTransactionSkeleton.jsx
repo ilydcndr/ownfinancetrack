@@ -1,4 +1,4 @@
-const TransactionItem = ({ transaction }) => {
+const RecentTransactionSkeleton = () => {
     return (
         <div className="row">
             <div className="col-3 d-flex align-items-center">
@@ -19,8 +19,7 @@ const TransactionItem = ({ transaction }) => {
                 <div className="skeleton skeleton-line shimmer" style={{ width: '50%', height: '20px' }}></div>
             </div>
         </div>
-
     );
 };
 
-export default TransactionItem;
+export default RecentTransactionSkeleton;

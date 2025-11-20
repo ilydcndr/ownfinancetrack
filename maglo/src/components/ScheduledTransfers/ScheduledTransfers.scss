@@ -1,0 +1,28 @@
+@use '../../utils/variables' as *;
+
+.transfer {
+    &-item {
+        img {
+            width: 33px;
+            height: 33px;
+        }
+
+        &-text {
+            gap:8px
+        }
+
+        div {
+            gap: 8px;
+        }
+    }
+
+    &-title {
+        color: $primary-black;
+        font-size: 14px;
+    }
+
+    &-subtitle {
+        color: $primary-gray;
+        font-size: 12px;
+    }
+}
