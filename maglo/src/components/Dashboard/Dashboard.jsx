@@ -4,23 +4,21 @@ import { TopMenu, RecentTransactions, SideBar, Wallet, WorkingCapital, Total, Sc
 const Dashboard = ({ user }) => {
 
   if (!user) return <p>Loading...</p>
+  
   return (
     <div className="row">
-      <h1>Welcome, {user.fullName}</h1>
-      <p>Email: {user.email}</p>
       <div className="col-md-3">
-        {/*<SideBar/>*/}
+        <SideBar/>
       </div>
       <div className="col-md-5 row">
         <div className="col-12 row">
             {/*<Total/>*/}
-     
         </div>
         <div className="col-5">
           {/*<WorkingCapital/>*/}
         </div>
         <div className="col-md-5 w-100">
-          <RecentTransactions/>
+          {/*<RecentTransactions/>*/}
         </div>
       </div>
       <div className="col-md-4 row">

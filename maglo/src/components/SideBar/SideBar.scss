@@ -1,0 +1,30 @@
+@use '../../utils/variables' as *;
+
+.sidebar {
+    background-color: $gray-500 !important;
+    cursor: pointer;
+    font-size: 14px;
+
+    &-item {
+        background-color: unset !important;
+        border-radius: 8px !important;
+        padding: 12px !important;
+        color: $gray-300 !important;
+        font-weight: 500;
+
+        &.active {
+            background-color: $btn-color !important;
+            color: $primary-black !important;
+            font-weight: 600;
+        }
+    }
+
+    &-bottom {
+
+        &-item {
+            color: $gray-300 !important;
+            background-color: unset !important;
+            font-weight: 500;
+        }
+    }
+}
