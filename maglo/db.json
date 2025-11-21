@@ -5,6 +5,7 @@
       "email": "a@hot.com",
       "password": "1234",
       "fullName": "John Doe",
+      "image":"https://i.pravatar.cc/150?u=12345",
       "role": "user",
       "isActive": true,
       "lastLoginAt": "2025-10-06T10:30:00.000Z",
@@ -178,13 +179,14 @@
         }
       ],
       "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNTY1NDQ1LCJleHAiOjE3NjM1NzI2NDV9.gcT4kUIrEi1vQUt1uo2o-DU6iNETJfnUuAZHoKQE1MA",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNzIwODA2LCJleHAiOjE3NjQzMjU2MDZ9.OKGZHWVkNGdyZ5wR0YkiQW6EjIgDD8nphLClysFanf0"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNzIxNTkzLCJleHAiOjE3NjQzMjYzOTN9.pIU24SIocQg3k-nCicMi-qaor2HIBcGerr2484oWaBM"
     },
     {
       "id": "qS9Lp3c",
       "email": "ilydcndr@gmail.com",
       "password": "12345",
       "fullName": "Ilayda Cundar",
+      "image": "",
       "role": "user",
       "isActive": true,
       "financialSummary": {},

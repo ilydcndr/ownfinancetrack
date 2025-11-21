@@ -8,7 +8,7 @@ const Dashboard = ({ user }) => {
   return (
     <div className="row">
       <div className="col-md-3">
-        <SideBar/>
+        {/*<SideBar/>*/}
       </div>
       <div className="col-md-5 row">
         <div className="col-12 row">
@@ -23,8 +23,8 @@ const Dashboard = ({ user }) => {
       </div>
       <div className="col-md-4 row">
         <div className="col-12">
-          <div className="col-md-1">
-            {/*<TopMenu/>*/}
+          <div className="col-12">
+            <TopMenu/>
           </div>
           <div className="col-md-5">
             {/*<Wallet userInfo={user}/>*/}

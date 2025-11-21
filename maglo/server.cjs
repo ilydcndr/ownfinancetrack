@@ -18,6 +18,7 @@ function getDefaultUser({ fullName, email, password }) {
     email,
     password,
     fullName,
+    image:"",
     role: "user",
     isActive: true,
     financialSummary: {
