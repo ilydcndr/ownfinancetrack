@@ -15,7 +15,7 @@ const Total = () => {
     }
 
     return (
-        <>
+        <div className="d-flex col-12">
             {!user || !user.financialSummary ? (
                 <TotalSkeleton />
             ) : (
@@ -29,7 +29,7 @@ const Total = () => {
                     />
                 ))
             )}
-        </>
+        </div>
     );
 };
 export default Total;

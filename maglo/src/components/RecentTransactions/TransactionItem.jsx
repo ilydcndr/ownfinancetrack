@@ -5,7 +5,7 @@ const TransactionItem = ({ transaction }) => {
     const date = new Date(transaction.date);
 
     return (
-        <div className="row transaction-item d-flex justify-content-center align-items-center mb-3 mt-3">
+        <div className="row transaction-item d-flex justify-content-center align-items-center mb-4 mt-3">
             <div className="col-3 d-flex align-items-center text-center">
                 <img src={transaction.image}/>
                 <div>

@@ -7,8 +7,8 @@ const TopMenu = () => {
     const { user, logout } = useAuth();
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light px-3">
-            <div className="navbar-title navbar-brand fw-semibold">
+        <nav className="navbar navbar-expand-lg navbar-light">
+            <div className="topmenu-title navbar-brand fw-semibold">
                 Dashboard
             </div>
 

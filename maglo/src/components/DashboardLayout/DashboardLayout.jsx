@@ -1,40 +1,28 @@
-import { useAuth } from "../../context/AuthContext";
-import { TopMenu, RecentTransactions, SideBar, Wallet, WorkingCapital, Total, ScheduledTransfers } from '../index';
+import { Routes, Route } from "react-router-dom";
+import { TopMenu, SideBar } from '../index';
+import { DashboardHome } from '../../components/index';
 
-const DashboardLayout = ({ user }) => {
+const DashboardLayout = () => {
 
-  if (!user) return <p>Loading...</p>
-  
   return (
-    <div className="row">
-      <div className="col-md-3">
-        {/*<SideBar/>*/}
+    <div className="d-flex row">
+      <div className="col-2">
+        <SideBar /> 
       </div>
-      <div className="col-md-5 row">
-        <div className="col-12 row">
-            {/*<Total/>*/}
+
+      <div className="flex-1 col-10">
+        <div className="col-12 mt-4 topmenu">
+          <TopMenu />
         </div>
         <div className="col-12">
-          <WorkingCapital/>
+          <Routes>
+            <Route path="" element={<DashboardHome />} />
+            {/*<Route path="transactions" element={<Transactions />} />
+            <Route path="invoices" element={<Invoices />} />
+            <Route path="walletdetail" element={<WalletDetail/>} />
+            <Route path="settings" element={<Invoices />} />*/}
+          </Routes>
         </div>
-        <div className="col-md-5 w-100">
-          {/*<RecentTransactions/>*/}
-        </div>
-      </div>
-      <div className="col-md-4 row">
-        <div className="col-12">
-          <div className="col-12">
-            {/*<TopMenu/>*/}
-          </div>
-          <div className="col-md-5">
-            {/*<Wallet userInfo={user}/>*/}
-          </div>
-          <div className="col-md-6 w-100">
-            {/*<ScheduledTransfers />*/}
-          </div>
-
-        </div>
-
       </div>
     </div>
   );

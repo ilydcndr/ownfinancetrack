@@ -9,3 +9,5 @@ export { default as SignupForm } from './SignupForm/SignupForm';
 export { default as Wallet } from './Wallet/Wallet';
 export { default as WorkingCapital } from './WorkingCapital/WorkingCapital';
 export { default as Total } from './Total/Total';
+export { default as DashboardHome } from './DashboardHome/DashboardHome';
+export { default as AuthPage } from './AuthPage/AuthPage';

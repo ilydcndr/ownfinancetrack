@@ -15,7 +15,7 @@ const FinanceChart = () => {
   const userInfo = user.financialWorkingCapital
 
   return (
-    <div className="p-3 rounded bg-white">
+    <div className="mt-md-5 rounded bg-white">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h5 className="m-0 fw-semibold graph-title">Working Capital</h5>
         <div className="d-flex align-items-center">
@@ -41,7 +41,7 @@ const FinanceChart = () => {
         </div>
       </div>
 
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={250}>
         <LineChart data={userInfo[selectedPeriod].data}>
           <XAxis
             dataKey="date"

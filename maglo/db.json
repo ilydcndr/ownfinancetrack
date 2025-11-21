@@ -47,8 +47,8 @@
             {
               "date": "14 Apr",
               "income": 5200,
-              "expense": 4800,
-              "net": 400
+              "expense": 1800,
+              "net": 3400
             },
             {
               "date": "15 Apr",
@@ -58,9 +58,9 @@
             },
             {
               "date": "16 Apr",
-              "income": 5400,
-              "expense": 5300,
-              "net": 100
+              "income": 10400,
+              "expense": 300,
+              "net": 10100
             },
             {
               "date": "17 Apr",
@@ -76,9 +76,9 @@
             },
             {
               "date": "19 Apr",
-              "income": 5700,
-              "expense": 5600,
-              "net": 100
+              "income": 700,
+              "expense": 3700,
+              "net": -3000
             },
             {
               "date": "20 Apr",
@@ -263,7 +263,7 @@
         }
       ],
       "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNTY1NDQ1LCJleHAiOjE3NjM1NzI2NDV9.gcT4kUIrEi1vQUt1uo2o-DU6iNETJfnUuAZHoKQE1MA",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNzM0OTI2LCJleHAiOjE3NjQzMzk3MjZ9.WD94RttDvEUhBT6gPk0XYJl3wClCd0IQIR8jEmZ-h4A"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNzYxNTc0LCJleHAiOjE3NjQzNjYzNzR9.S-SESNV0iFuukhOyZS-cu31pq31ymxlG7QWzPXu1KRo"
     },
     {
       "id": "qS9Lp3c",
@@ -279,6 +279,128 @@
       "financialTransactionsRecent": [],
       "financialTransfersScheduled": [],
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InFTOUxwM2MiLCJlbWFpbCI6ImlseWRjbmRyQGdtYWlsLmNvbSIsImlhdCI6MTc2MzU2OTE5NCwiZXhwIjoxNzY0MTczOTk0fQ.i0AXlPKb9-LhiOPC3OOhuKG3Au6z949HG-MWqug3sto"
+    },
+    {
+      "id": "9a4ce31d-8d4f-4abe-b451-6a097e494c85",
+      "email": "fat@hotmail.com",
+      "password": "1234",
+      "fullName": "fat",
+      "image": "",
+      "role": "user",
+      "isActive": true,
+      "financialSummary": {
+        "totalBalance": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "totalExpense": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "totalSavings": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "lastUpdated": "2025-11-21T21:29:50.191Z"
+      },
+      "financialWorkingCapital": [],
+      "financialWallet": [],
+      "financialTransactionsRecent": [],
+      "financialTransfersScheduled": [],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlhNGNlMzFkLThkNGYtNGFiZS1iNDUxLTZhMDk3ZTQ5NGM4NSIsImVtYWlsIjoiZmF0QGhvdG1haWwuY29tIiwiaWF0IjoxNzYzNzYwNjA4LCJleHAiOjE3NjQzNjU0MDh9.A5iHq95XlRyN7A1OETlDVw_scoKbPrPDK5YblHuOlvM"
+    },
+    {
+      "id": "d0a655b0-90e6-4f02-af8b-0de3ac2cecb4",
+      "email": "b@hot.com",
+      "password": "1",
+      "fullName": "aa",
+      "image": "",
+      "role": "user",
+      "isActive": true,
+      "financialSummary": {
+        "totalBalance": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "totalExpense": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "totalSavings": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "lastUpdated": "2025-11-21T21:44:47.350Z"
+      },
+      "financialWorkingCapital": [],
+      "financialWallet": [],
+      "financialTransactionsRecent": [],
+      "financialTransfersScheduled": []
+    },
+    {
+      "id": "825bdc43-6109-49e5-8fd5-219dc21c2af6",
+      "email": "aa@hot.com",
+      "password": "1",
+      "fullName": "aa",
+      "image": "",
+      "role": "user",
+      "isActive": true,
+      "financialSummary": {
+        "totalBalance": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "totalExpense": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "totalSavings": {
+          "amount": 0,
+          "currency": "TRY",
+          "change": {
+            "percentage": 0,
+            "trend": "up"
+          }
+        },
+        "lastUpdated": "2025-11-21T21:45:33.357Z"
+      },
+      "financialWorkingCapital": [],
+      "financialWallet": [],
+      "financialTransactionsRecent": [],
+      "financialTransfersScheduled": [],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyNWJkYzQzLTYxMDktNDllNS04ZmQ1LTIxOWRjMjFjMmFmNiIsImVtYWlsIjoiYWFAaG90LmNvbSIsImlhdCI6MTc2Mzc2MTU0NSwiZXhwIjoxNzY0MzY2MzQ1fQ.kOtAccHgKE0mqgqO0pozHtKNY5THNNBwj1ZYCrzVcsc"
     }
   ]
 }
