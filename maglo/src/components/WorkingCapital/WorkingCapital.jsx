@@ -17,14 +17,14 @@ const FinanceChart = () => {
   return (
     <div className="p-3 rounded bg-white">
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h5 className="m-0 fw-semibold">Working Capital</h5>
+        <h5 className="m-0 fw-semibold graph-title">Working Capital</h5>
         <div className="d-flex align-items-center">
           <div>
-            <span className="me-3">
-              <span className="me-1" style={{ color: "#29A073", fontSize: "12px" }}>●</span> Income
+            <span className="me-3" style={{ fontSize: "12px" }}>
+              <span className="me-1" style={{ color: "#29A073", fontSize: "16px" }}>●</span> Income
             </span>
-            <span>
-              <span className="me-1" style={{ color: "#C8EE44", fontSize: "12px" }}>●</span> Expense
+            <span style={{ fontSize: "12px" }}>
+              <span className="me-1" style={{ color: "#C8EE44", fontSize: "16px" }}>●</span> Expense
             </span>
           </div>
           <div>
@@ -65,7 +65,8 @@ const FinanceChart = () => {
             formatter={(value) => `$${value}`}
             contentStyle={{ fontSize: "12px" }}
             itemStyle={{ fontSize: "12px" }}
-            labelStyle={{ fontSize: "12px" }} />
+            labelStyle={{ fontSize: "12px" }}
+            cursor={false} />
 
           <Line
             type="monotone"

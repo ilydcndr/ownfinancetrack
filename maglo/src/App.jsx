@@ -3,6 +3,7 @@ import Logo from './assets/logos/maglo-logo.svg';
 import Google from './assets/logos/google.png';
 import MainImg from './assets/images/main-img.svg';
 import { DashboardLayout, LoginForm, SignupForm  } from './components/index';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "./context/AuthContext";
 const API = import.meta.env.VITE_API_URL;
