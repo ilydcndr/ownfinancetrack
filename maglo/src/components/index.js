@@ -1,5 +1,5 @@
 export { default as BasicSkeletons } from './BasicSkeletons/BasicSkeletons';
-export { default as Dashboard } from './Dashboard/Dashboard';
+export { default as DashboardLayout } from './DashboardLayout/DashboardLayout';
 export { default as LoginForm } from './LoginForm/LoginForm';
 export { default as TopMenu } from './TopMenu/TopMenu';
 export { default as RecentTransactions } from './RecentTransactions/RecentTransactions';

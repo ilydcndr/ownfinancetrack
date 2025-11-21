@@ -1,85 +1,94 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
 import {
   LineChart,
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
-// Örnek veriler
-const monthlyData = [
-  { name: "Mayıs", value: 5000 },
-  { name: "Haziran", value: 7000 },
-  { name: "Temmuz", value: 6000 },
-  { name: "Ağustos", value: 8000 },
-  { name: "Eylül", value: 7500 },
-  { name: "Ekim", value: 9000 },
-];
-
-// Arrow function ile daily data üretimi
-const generateDailyData = (days = 30) =>
-  Array.from({ length: days }, (_, i) => ({
-    name: `Gün ${i + 1}`,
-    value: Math.floor(Math.random() * 5000) + 5000,
-  }));
-
-const WorkingCapital = () => {
-  const [view, setView] = useState("monthly"); // monthly veya daily
-
-  const data = view === "monthly" ? monthlyData : generateDailyData();
+const FinanceChart = () => {
+  const [selectedPeriod, setSelectedPeriod] = useState(0);
+  const { user } = useAuth();
+  const userInfo = user.financialWorkingCapital
 
   return (
-    <div style={{ width: "100%", maxWidth: 700, margin: "0 auto", padding: "2rem" }}>
-      <h2>Working Capital</h2>
-
-      {/* Görünüm seçim butonları */}
-      <div style={{ marginBottom: "1rem" }}>
-        <button
-          onClick={() => setView("monthly")}
-          style={{
-            marginRight: "0.5rem",
-            padding: "0.5rem 1rem",
-            background: view === "monthly" ? "#8884d8" : "#eee",
-            color: view === "monthly" ? "#fff" : "#000",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          6 Aylık
-        </button>
-        <button
-          onClick={() => setView("daily")}
-          style={{
-            padding: "0.5rem 1rem",
-            background: view === "daily" ? "#8884d8" : "#eee",
-            color: view === "daily" ? "#fff" : "#000",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          Günlük
-        </button>
+    <div className="p-3 rounded bg-white">
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h5 className="m-0 fw-semibold">Working Capital</h5>
+        <div className="d-flex align-items-center">
+          <div>
+            <span className="me-3">
+              <span className="me-1" style={{ color: "#29A073", fontSize: "12px" }}>●</span> Income
+            </span>
+            <span>
+              <span className="me-1" style={{ color: "#C8EE44", fontSize: "12px" }}>●</span> Expense
+            </span>
+          </div>
+          <div>
+            <select
+              className="form-select w-auto border-0"
+              value={selectedPeriod}
+              onChange={(e) => setSelectedPeriod(Number(e.target.value))}
+              style={{ color: "#1B212D", fontSize: "12px" }}
+            >
+              <option value={0}>Last 7 Days</option>
+              <option value={1}>Last 6 Months</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      {/* Chart */}
       <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="value" stroke="#8884d8" activeDot={{ r: 8 }} />
+        <LineChart data={userInfo[selectedPeriod].data}>
+          <XAxis
+            dataKey="date"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#929EAE", fontSize: 12, fontWeight: 400 }}
+            padding={{ left: 30, right: 30 }} />
+
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#929EAE", fontSize: 12, fontWeight: 400 }}
+            padding={{ top: 30, bottom: 30 }} domain={[0, 10000]}
+            tickFormatter={(value) => {
+              if (value === 0) return "0";
+              return `${value / 1000}K`;
+            }}
+            ticks={[0, 3000, 5000, 7000, 10000]} />
+
+          <Tooltip
+            formatter={(value) => `$${value}`}
+            contentStyle={{ fontSize: "12px" }}
+            itemStyle={{ fontSize: "12px" }}
+            labelStyle={{ fontSize: "12px" }} />
+
+          <Line
+            type="monotone"
+            dataKey="income"
+            stroke="#29A073"
+            strokeWidth={1.5}
+            dot={{ r: 4 }}
+            activeDot={{ r: 6 }}
+          />
+          
+          <Line
+            type="monotone"
+            dataKey="expense"
+            stroke="#C8EE44"
+            strokeWidth={1.5}
+            dot={{ r: 4 }}
+            activeDot={{ r: 6 }}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>
   );
 };
 
-export default WorkingCapital;
+export default FinanceChart;
+

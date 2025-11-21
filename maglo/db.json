@@ -5,7 +5,7 @@
       "email": "a@hot.com",
       "password": "1234",
       "fullName": "John Doe",
-      "image":"https://i.pravatar.cc/150?u=12345",
+      "image": "https://i.pravatar.cc/150?u=12345",
       "role": "user",
       "isActive": true,
       "lastLoginAt": "2025-10-06T10:30:00.000Z",
@@ -40,21 +40,105 @@
       },
       "financialWorkingCapital": [
         {
-          "id": 1,
-          "period": "last6Months",
+          "id": 2,
+          "period": "Last 7 Days",
           "currency": "TRY",
           "data": [
             {
-              "month": "Ocak",
-              "income": 65000,
-              "expense": 42000,
-              "net": 23000
+              "date": "14 Apr",
+              "income": 5200,
+              "expense": 4800,
+              "net": 400
+            },
+            {
+              "date": "15 Apr",
+              "income": 5600,
+              "expense": 5100,
+              "net": 500
+            },
+            {
+              "date": "16 Apr",
+              "income": 5400,
+              "expense": 5300,
+              "net": 100
+            },
+            {
+              "date": "17 Apr",
+              "income": 5500,
+              "expense": 5700,
+              "net": -200
+            },
+            {
+              "date": "18 Apr",
+              "income": 5300,
+              "expense": 4950,
+              "net": 350
+            },
+            {
+              "date": "19 Apr",
+              "income": 5700,
+              "expense": 5600,
+              "net": 100
+            },
+            {
+              "date": "20 Apr",
+              "income": 5450,
+              "expense": 5200,
+              "net": 250
             }
           ],
           "summary": {
-            "totalIncome": 390000,
-            "totalExpense": 252000,
-            "netBalance": 138000
+            "totalIncome": 38150,
+            "totalExpense": 36650,
+            "netBalance": 1500
+          }
+        },
+        {
+          "id": 1,
+          "period": "Last 6 Months",
+          "currency": "TRY",
+          "data": [
+            {
+              "date": "Jan",
+              "income": 65000,
+              "expense": 61000,
+              "net": 4000
+            },
+            {
+              "date": "Feb",
+              "income": 68000,
+              "expense": 66000,
+              "net": 2000
+            },
+            {
+              "date": "Mar",
+              "income": 70000,
+              "expense": 69000,
+              "net": 1000
+            },
+            {
+              "date": "Apr",
+              "income": 72000,
+              "expense": 74000,
+              "net": -2000
+            },
+            {
+              "date": "May",
+              "income": 71000,
+              "expense": 69500,
+              "net": 1500
+            },
+            {
+              "date": "Jun",
+              "income": 73500,
+              "expense": 72000,
+              "net": 1500
+            }
+          ],
+          "summary": {
+            "totalIncome": 419500,
+            "totalExpense": 411500,
+            "netBalance": 8000
           }
         }
       ],
@@ -179,7 +263,7 @@
         }
       ],
       "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNTY1NDQ1LCJleHAiOjE3NjM1NzI2NDV9.gcT4kUIrEi1vQUt1uo2o-DU6iNETJfnUuAZHoKQE1MA",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNzIxNTkzLCJleHAiOjE3NjQzMjYzOTN9.pIU24SIocQg3k-nCicMi-qaor2HIBcGerr2484oWaBM"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDBmZTRmNTMxMTIzNjE2OGExMDljYSIsImVtYWlsIjoiYUBob3QuY29tIiwiaWF0IjoxNzYzNzM0OTI2LCJleHAiOjE3NjQzMzk3MjZ9.WD94RttDvEUhBT6gPk0XYJl3wClCd0IQIR8jEmZ-h4A"
     },
     {
       "id": "qS9Lp3c",

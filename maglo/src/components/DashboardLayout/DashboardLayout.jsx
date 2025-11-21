@@ -1,7 +1,7 @@
 import { useAuth } from "../../context/AuthContext";
-import { TopMenu, RecentTransactions, SideBar, Wallet, WorkingCapital, Total, ScheduledTransfers } from '../../components/index';
+import { TopMenu, RecentTransactions, SideBar, Wallet, WorkingCapital, Total, ScheduledTransfers } from '../index';
 
-const Dashboard = ({ user }) => {
+const DashboardLayout = ({ user }) => {
 
   if (!user) return <p>Loading...</p>
   
@@ -14,8 +14,8 @@ const Dashboard = ({ user }) => {
         <div className="col-12 row">
             {/*<Total/>*/}
         </div>
-        <div className="col-5">
-          {/*<WorkingCapital/>*/}
+        <div className="col-12">
+          <WorkingCapital/>
         </div>
         <div className="col-md-5 w-100">
           {/*<RecentTransactions/>*/}
@@ -24,7 +24,7 @@ const Dashboard = ({ user }) => {
       <div className="col-md-4 row">
         <div className="col-12">
           <div className="col-12">
-            <TopMenu/>
+            {/*<TopMenu/>*/}
           </div>
           <div className="col-md-5">
             {/*<Wallet userInfo={user}/>*/}
@@ -39,4 +39,4 @@ const Dashboard = ({ user }) => {
     </div>
   );
 };
-export default Dashboard;
+export default DashboardLayout;
