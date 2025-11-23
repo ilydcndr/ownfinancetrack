@@ -16,7 +16,7 @@ const Total = () => {
 
     return (
         <div className="d-xl-flex block col-12">
-            {!user || !user.financialSummary ? (
+            {!user || Object.keys(user.financialSummary).length === 0 ? (
                 <TotalSkeleton />
             ) : (
                 Object.keys(financialSummaries).map((key, index) => (

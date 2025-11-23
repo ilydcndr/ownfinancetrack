@@ -1,4 +1,3 @@
-import { useAuth } from "../../context/AuthContext";
 import { RecentTransactions, SideBar, Wallet, WorkingCapital, Total, ScheduledTransfers } from '../index';
 
 
@@ -15,7 +14,7 @@ const DashboardHome = () => {
                         <WorkingCapital />
                     </div>
                     <div className="flex-grow-5">
-                        <RecentTransactions />
+                         <RecentTransactions />
                     </div>
                 </div>
             </div>

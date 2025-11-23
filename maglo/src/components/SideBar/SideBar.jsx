@@ -55,7 +55,6 @@ const SideBar = () => {
     const handleLogOut = () => {
         localStorage.removeItem("user");
         setUser(null);
-        console.log(user)
         window.location.reload();
     }
 
