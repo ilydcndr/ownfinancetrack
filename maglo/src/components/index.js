@@ -11,3 +11,4 @@ export { default as WorkingCapital } from './WorkingCapital/WorkingCapital';
 export { default as Total } from './Total/Total';
 export { default as DashboardHome } from './DashboardHome/DashboardHome';
 export { default as AuthPage } from './AuthPage/AuthPage';
+export { default as Transactions } from './Transactions/Transactions';

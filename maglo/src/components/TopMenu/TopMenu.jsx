@@ -1,25 +1,29 @@
 import { useAuth } from "../../context/AuthContext"
 import Notify from '../../assets/logos/notify.svg'
 import Search from '../../assets/logos/search.svg'
+import { useLocation } from "react-router-dom";
 import "./Topmenu.scss"
 
 const TopMenu = () => {
     const { user, logout } = useAuth();
+    const location = useLocation();
+    const path = location.pathname;
+    const pageName = path.split('/')
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="d-none d-xl-block topmenu-title navbar-brand fw-semibold">
-                Dashboard
+                {pageName}
             </div>
 
             <div className="ms-auto d-flex align-items-center gap-3">
 
                 <button type="button" className="btn border-0">
-                    <img src={Notify} width={24} height={24}/>
+                    <img src={Notify} width={24} height={24} />
                 </button>
 
                 <button type="button" className="btn border-0">
-                    <img src={Search} width={24} height={24}/>
+                    <img src={Search} width={24} height={24} />
                 </button>
 
                 <div className="dropdown">

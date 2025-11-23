@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { TopMenu, SideBar } from '../index';
-import { DashboardHome } from '../../components/index';
+import { DashboardHome, Transactions } from '../../components/index';
 
 const DashboardLayout = () => {
 
@@ -16,9 +16,9 @@ const DashboardLayout = () => {
         </div>
         <div className="col-12">
           <Routes>
-            <Route path="" element={<DashboardHome />} />
-            {/*<Route path="transactions" element={<Transactions />} />
-            <Route path="invoices" element={<Invoices />} />
+            <Route path="Dashboard" element={<DashboardHome />} />
+            <Route path="transactions" element={<Transactions />} />
+            {/*<Route path="invoices" element={<Invoices />} />
             <Route path="walletdetail" element={<WalletDetail/>} />
             <Route path="settings" element={<Invoices />} />*/}
           </Routes>
