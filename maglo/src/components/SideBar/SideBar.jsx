@@ -58,8 +58,8 @@ const SideBar = () => {
     }
 
     return (
-        <div className="container-fluid sidebar">
-            <div className="sidebar-frame col-md-12 d-none d-md-flex bg-light vh-100 p-3 flex-column justify-content-between">
+        <div className="container-fluid sidebar h-100">
+            <div className="sidebar-frame col-xl-12 d-none d-xl-flex bg-light vh-100 p-3 flex-column justify-content-between">
                 <div>
                     <img src={Logo} />
                     <ul className="list-group mt-5">
@@ -88,7 +88,7 @@ const SideBar = () => {
             </div>
 
 
-            <div className="d-block d-md-none p-3">
+            <div className="d-block d-xl-none p-3">
                 <label htmlFor="mobileSidebar" className="form-label fw-bold">
                     <img src={Logo} alt="Logo" />
                 </label>

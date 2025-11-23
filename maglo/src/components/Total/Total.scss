@@ -8,6 +8,15 @@
         gap: 5px;
         cursor: pointer;
 
+        @media (min-width: 1200px) {
+            padding: 20px 10px;
+        }
+
+        @media (min-width: 1400px) {
+            padding: 23px;
+            ;
+        }
+
         &.active {
             background-color: $secondary-black;
 
@@ -19,7 +28,11 @@
         img {
             width: 40px;
             height: 40px;
-            margin: auto;
+            margin: 0 15px;
+
+            @media (min-width: 1400px) {
+                margin: auto;
+            }
         }
     }
 

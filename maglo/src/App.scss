@@ -64,10 +64,11 @@
 .form-container {
   width: auto;
   gap: 15px;
-    @media (min-width: 1400px) {
-        margin-top: 35px;
-        min-width: 404px;
-    }
+
+  @media (min-width: 1400px) {
+    margin-top: 35px;
+    min-width: 404px;
+  }
 }
 
 label {
@@ -77,9 +78,19 @@ label {
 }
 
 .graph-title {
-  font-size: 18px;
+  font-size: 12px;
+
+  @media (min-width: 1400px) {
+    font-size: 18px;
+  }
 }
 
 .top-menu {
   margin: 30px 16px;
+}
+
+.right-end {
+    @media (min-width: 1200px) {
+     margin-right: 35px;
+  }
 }

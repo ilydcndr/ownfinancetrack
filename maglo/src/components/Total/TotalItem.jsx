@@ -6,7 +6,7 @@ import { formatUSD } from '../../utils/formatCurrency';
 const TotalItem = ({ title, content, isActiveBox, onClick }) => {
 
     return (
-        <div onClick={onClick} className={`col-4 d-flex total-box ${isActiveBox ? 'active' : ''}`}>
+        <div onClick={onClick} className={`mt-3 mt-xl-0 col-xl-4 col-12 d-flex total-box ${isActiveBox ? 'active' : ''}`}>
             <img src={isActiveBox ? summaryIconActive : summaryIcon} />
             <div className="total-info">
                 <div className='total-title'>{title.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase())}</div>

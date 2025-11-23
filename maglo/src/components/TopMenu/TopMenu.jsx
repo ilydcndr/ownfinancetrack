@@ -8,7 +8,7 @@ const TopMenu = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
-            <div className="topmenu-title navbar-brand fw-semibold">
+            <div className="d-none d-xl-block topmenu-title navbar-brand fw-semibold">
                 Dashboard
             </div>
 

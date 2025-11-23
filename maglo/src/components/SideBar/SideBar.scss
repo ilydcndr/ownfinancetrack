@@ -11,7 +11,7 @@
         padding: 15px !important;
         color: $gray-300 !important;
         font-weight: 500;
-        gap:10px;
+        gap: 10px;
 
         &.active {
             background-color: $btn-color !important;
@@ -26,6 +26,19 @@
             color: $gray-300 !important;
             background-color: unset !important;
             font-weight: 500;
+        }
+    }
+
+    &-frame {
+        display: flex;
+        
+        @media (min-width: 1200px) {
+            width: 170px !important;
+            position: fixed;
+        }
+
+        @media (min-width: 1400px) {
+            width: 185px !important;
         }
     }
 

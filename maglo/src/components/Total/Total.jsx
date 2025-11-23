@@ -15,7 +15,7 @@ const Total = () => {
     }
 
     return (
-        <div className="d-flex col-12">
+        <div className="d-xl-flex block col-12">
             {!user || !user.financialSummary ? (
                 <TotalSkeleton />
             ) : (
