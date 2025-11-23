@@ -87,7 +87,7 @@ const LoginForm = ({ onSignIn }) => {
         <p className='title fw-semibold'>SignIn</p>
         <p className='subtitle'>Welcome back! Please enter your details</p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className='form-container d-flex flex-column' noValidate>
+      <form onSubmit={handleSubmit(onSubmit)} className='form-container d-flex flex-column mt-4' noValidate>
         <div className='form-group d-flex flex-column'>
           <label htmlFor="email">Email</label>
           <input

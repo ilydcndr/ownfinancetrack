@@ -29,8 +29,8 @@ const AuthPage = ({ onLogin, user }) => {
   }
 
   return (
-    <div className='row'>
-      <div className='col-6 main-left'>
+    <div className='row min-vh-100 justify-content-center align-items-center mx-5 mx-xl-0'>
+      <div className='col-xl-6 col-12 main-left'>
         <img src={Logo} alt='Logo' />
 
         {showSignIn ?
@@ -59,8 +59,8 @@ const AuthPage = ({ onLogin, user }) => {
           </div>
         </div>
       </div>
-      <div className='col-6 main-img'>
-        <img className='text-end' src={MainImg} alt="main image" />
+      <div className='col-xl-6 d-none d-xl-flex justify-content-end main-img'>
+        <img className='mw-100' src={MainImg} alt="main image" />
       </div>
     </div>
   )
