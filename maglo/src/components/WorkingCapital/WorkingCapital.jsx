@@ -33,7 +33,7 @@ const FinanceChart = () => {
             </div>
             <div>
               <select
-                className="form-select w-auto border-0"
+                className="form-select w-auto border-0 pb-0"
                 value={selectedPeriod}
                 onChange={(e) => setSelectedPeriod(Number(e.target.value))}
                 style={{ color: "#1B212D", fontSize: "12px" }}
