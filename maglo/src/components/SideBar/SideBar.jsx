@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 
 const SideBar = () => {
-    const { user,setUser } = useAuth();
+    const { user, setUser } = useAuth();
 
     const SideBarMenu = [
         {
@@ -65,7 +65,7 @@ const SideBar = () => {
                     <img src={Logo} />
                     <ul className="list-group mt-5">
                         {SideBarMenu.map((item, index) => (
-                            <Link  key={index} to={item.menu.replace(/\s+/g, '')} className="text-decoration-none text-dark">
+                            <Link key={index} to={item.menu.replace(/\s+/g, '')} className="text-decoration-none text-dark">
                                 <li
                                     className={`sidebar-item list-group-item border-0 d-flex align-items-center mb-2 ${isActive === index ? 'active' : ''}`}
                                     onClick={() => handleClick(index)}

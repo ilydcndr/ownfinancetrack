@@ -10,7 +10,7 @@ export const formatDate = (date, locale = 'tr') => {
     const enTimeOptions = {
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false // AM/PM OLMASIN
+        hour12: false
     };
 
     const trOptions = {

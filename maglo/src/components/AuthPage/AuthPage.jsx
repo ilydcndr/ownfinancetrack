@@ -1,11 +1,11 @@
 import Logo from '../../assets/logos/maglo-logo.svg';
 import Google from '../../assets/logos/google.png';
 import MainImg from '../../assets/images/main-img.svg';
-import { DashboardLayout, LoginForm, SignupForm  } from '../../components/index';
+import { DashboardLayout, LoginForm, SignupForm } from '../../components/index';
 import { useState, useEffect } from "react";
 const API = import.meta.env.VITE_API_URL;
 
-const AuthPage = ({onLogin,user}) => {
+const AuthPage = ({ onLogin, user }) => {
   const [showSignIn, setShowSignIn] = useState(true);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const AuthPage = ({onLogin,user}) => {
   };
 
   if (user) {
-    return  <DashboardLayout user={user} /> 
+    return <DashboardLayout user={user} />
   }
 
   return (
@@ -40,21 +40,21 @@ const AuthPage = ({onLogin,user}) => {
 
         <div className="auth-container">
           <div className='auth-title d-flex justify-content-center align-items-start'>
-            <img src={Google} alt="Sign in with Google"/>
-              {showSignIn ? "Sign up with google" : "Sign in with google"}
+            <img src={Google} alt="Sign in with Google" />
+            {showSignIn ? "Sign up with google" : "Sign in with google"}
           </div>
 
           <div className='d-flex justify-content-center align-items-start mt-2'>
             <p className="auth-subtitle">
-                {showSignIn 
-                  ? "Don’t have an account? " 
-                  : "Already have an account? "}
-                <span 
-                  className="auth-bold" 
-                  onClick={() => setShowSignIn(!showSignIn)}
-                >
-                  {showSignIn ? "Sign up" : "Sign in"}
-                </span>
+              {showSignIn
+                ? "Don’t have an account? "
+                : "Already have an account? "}
+              <span
+                className="auth-bold"
+                onClick={() => setShowSignIn(!showSignIn)}
+              >
+                {showSignIn ? "Sign up" : "Sign in"}
+              </span>
             </p>
           </div>
         </div>

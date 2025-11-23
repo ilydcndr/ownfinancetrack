@@ -32,9 +32,6 @@ const LoginForm = ({ onSignIn }) => {
       const loginData = await loginRes.json();
       const token = loginData.token;
 
-      console.log(loginData,"loginDataa")
-      console.log(token,"tokeen")
-
       const userRes = await fetch(`${API}/profile`, {
         method: "GET",
         headers: {

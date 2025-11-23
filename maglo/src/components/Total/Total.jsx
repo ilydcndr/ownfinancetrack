@@ -23,7 +23,7 @@ const Total = () => {
                     <TotalItem
                         isActiveBox={activeBox === index}
                         onClick={() => handleClick(index)}
-                        key={index} 
+                        key={index}
                         title={key}
                         content={financialSummaries[key].amount}
                     />

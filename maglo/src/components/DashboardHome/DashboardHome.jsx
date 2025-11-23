@@ -14,7 +14,7 @@ const DashboardHome = () => {
                         <WorkingCapital />
                     </div>
                     <div className="flex-grow-5">
-                         <RecentTransactions />
+                        <RecentTransactions />
                     </div>
                 </div>
             </div>

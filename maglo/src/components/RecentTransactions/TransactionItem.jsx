@@ -7,7 +7,7 @@ const TransactionItem = ({ transaction }) => {
     return (
         <div className="row transaction-item d-flex justify-content-center align-items-center mb-4 mt-3">
             <div className="col-3 d-flex align-items-center text-center">
-                <img src={transaction.image}/>
+                <img src={transaction.image} />
                 <div>
                     <div className="fw-medium transaction-item-title text-nowrap">{transaction.name}</div>
                     <div className="transaction-item-brand text-nowrap">{transaction.business}</div>
@@ -21,7 +21,7 @@ const TransactionItem = ({ transaction }) => {
                 {formatUSD(transaction.amount)}
             </div>
             <div className="col-3 transaction-item-date text-end">
-                {formatDate(date,"tr")}
+                {formatDate(date, "tr")}
             </div>
         </div>
     );

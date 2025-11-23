@@ -11,7 +11,7 @@ const TotalSkeleton = () => {
             ]}
             direction="row"
             margin="20px 0"
-            justifyContent= "space-between"
+            justifyContent="space-between"
         />
     );
 };

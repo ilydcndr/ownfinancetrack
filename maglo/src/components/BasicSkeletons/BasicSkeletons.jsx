@@ -13,12 +13,12 @@ const BasicSkeletons = ({ items, direction = "row", gap = "1rem", margin, justif
       className="skeleton-container"
       style={{
         display: "flex",
-        width:"100%",
-        height:height,
+        width: "100%",
+        height: height,
         flexDirection: direction,
         flexWrap: "wrap",
         gap: gap,
-        margin:margin,
+        margin: margin,
         justifyContent: justifyContent
       }}
     >
