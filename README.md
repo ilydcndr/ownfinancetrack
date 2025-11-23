@@ -18,7 +18,8 @@ Projeyi çalıştırmak için iki terminal açın:
 ```bash
 node server.cjs
 
-**Terminal 2: Fe başlatın
+**Terminal 2:** Fe başlatın
+```bash
 npm run dev
 
 
