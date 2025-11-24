@@ -3,7 +3,7 @@ import Google from '../../assets/logos/google.png';
 import MainImg from '../../assets/images/main-img.svg';
 import { DashboardLayout, LoginForm, SignupForm } from '../../components/index';
 import { useState, useEffect } from "react";
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL || `${window.location.protocol}//${window.location.hostname}:5737`;
 
 const AuthPage = ({ onLogin, user }) => {
   const [showSignIn, setShowSignIn] = useState(true);

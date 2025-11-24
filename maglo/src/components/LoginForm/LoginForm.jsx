@@ -2,9 +2,13 @@ import { useForm } from "react-hook-form";
 import "./LoginForm.scss";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
-const API = import.meta.env.VITE_API_URL;
+import { useNavigate } from "react-router-dom";
+const API = import.meta.env.VITE_API_URL || `${window.location.protocol}//${window.location.hostname}:5737`;
+;
 
 const LoginForm = ({ onSignIn }) => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -31,6 +35,7 @@ const LoginForm = ({ onSignIn }) => {
 
       const loginData = await loginRes.json();
       const token = loginData.token;
+      navigate("/Dashboard");
 
       const userRes = await fetch(`${API}/profile`, {
         method: "GET",

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import "./SignupForm.scss";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL || `${window.location.protocol}//${window.location.hostname}:5737`;
 
 const SignupForm = ({ onSignUp }) => {
   const {
